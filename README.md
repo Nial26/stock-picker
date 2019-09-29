@@ -6,6 +6,26 @@
 python3 stock_picker.py <csv_file_name>
 ```
 
+Sample Transcript
+
+```
+> python3 stock_picker.py test_stocks.csv
+Please enter a Valid Stock Name:
+AMBKP
+From Which Date do you want to Start [Enter Date in format: 01-Jan-2019]:
+22-Jan-2019
+Till Which Date do you want to Analyse [Enter Date in format: 01-Jan-2019]:
+30-Feb-2019
+Date format was Invalid!! Please Enter date in DD-MON-YYYY [01-Jan-2019] Format
+Do you want to Continue? ([y]/n)
+y
+Till Which Date do you want to Analyse [Enter Date in format: 01-Jan-2019]:
+20-Feb-2019
+Mean:  32.387 Standard Deviation:  4.335978782235911 Buy Date:  2019-01-22 00:00:00 Selling Date:  2019-01-24 00:00:00 Profit from Doing the transaction with 100 Stocks:  613.2000000000002
+Do you want to Continue: ([y]/n)
+n
+```
+
 ## High Level Overview
 
 Folder Structure
