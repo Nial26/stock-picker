@@ -1,5 +1,5 @@
-from stock_info import StockInfo
-from stock_search_filter import StockSearchFilter
+from entities.stock_info import StockInfo
+from entities.stock_search_filter import StockSearchFilter
 from typing import Dict, List, Set, Union
 
 class StockService:

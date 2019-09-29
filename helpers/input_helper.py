@@ -1,6 +1,6 @@
 import sys
 
-from stock_search_filter import StockSearchFilter
+from entities.stock_search_filter import StockSearchFilter
 from datetime import datetime
 
 _GET_STOCK_NAME_MSG = "Please enter a Valid Stock Name: "

@@ -4,10 +4,10 @@ from statistics import mean, stdev
 from typing import Dict, Tuple, Optional
 
 
-import csv_utils
-import input_helper
-from stock_search_filter import StockSearchFilter
-from stock_service import StockService
+from helpers.csv_utils import CSVFile
+import helpers.input_helper as input_helper
+from entities.stock_search_filter import StockSearchFilter
+from services.stock_service import StockService
 
 
 def main(file_name: str):
@@ -26,7 +26,7 @@ def main(file_name: str):
 
 def init(file_name: str) -> StockService:
     try:
-        csv_util = csv_utils.CSVFile(file_name, True)
+        csv_util = CSVFile(file_name, True)
         csv_util.read_file()
     except FileNotFoundError:
         print("Please pass a fully qualified path name to the CSV file")
