@@ -36,3 +36,9 @@ stock_picker
 `stock_picker.py` is more of an orchestrator, which does some basic checks during initialization such as are the no. of arguments correct and so on and then it initializes the `StockService` using the data from the CSV file.
 `input_helper.py` takes care of input handling, retries when the input is wrong etc., After reading all the input it returns a `StockSearchFilter`, which is passed on the `StockService#get_stocks`, which return the stock which matches the filter.
 This data is then used back in the `stock_picker.py` to calculate interesting stuff on the data
+
+## To Do
+
+* Add Test cases for `StockService`
+* Refactor `input_helper`
+* Fix some issues around buying and selling dates of stocks
