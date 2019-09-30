@@ -31,7 +31,7 @@ def _get_stock_name(valid_stock_names: set):
         stock_name = input().lower()
         if stock_name not in valid_stock_names:
             print(_WRONG_STOCK_NAME_RETRY_MSG)
-            print(valid_stock_names)
+            print(_get_similar_names(stock_name, valid_stock_names))
             print(_DO_YOU_WANT_TO_CONTINUE)
             if input().lower() == "n":
                 want_to_exit = True
@@ -39,6 +39,12 @@ def _get_stock_name(valid_stock_names: set):
         else:
             return stock_name
 
+def _get_similar_names(given_name, valid_stock_names):
+    options = []
+    for name in valid_stock_names: 
+        if given_name in name: #Can Increase the Options eventually
+            options.append(name)
+    return valid_stock_names if options == [] else options  # Fallback if there are no options generated
 
 def _get_period():
     from_date = _get_date(_FROM_DATE_MSG)

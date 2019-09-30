@@ -52,15 +52,10 @@ def handle_transaction(stocks_service: StockService) -> Tuple[float, Optional[fl
         m = mean([i.price for i in stocks])
     if len(stock_prices) >= 2:
         s = stdev([i.price for i in stocks])
+        
+    buying_stock_info, sell_stock_info, profit_made = stocks_service.get_max_profit_period(stock_search_filter)
 
-    # Buy Low, Sell High bby!
-    # I know there are cases here like buy date > sell date, I can actually fix that. But not now
-    buying_stock_info = stocks[stock_prices.index(min(stock_prices))]
-    selling_stock_info = stocks[stock_prices.index(max(stock_prices))]
-
-    profit_made = 100 * (selling_stock_info.price - buying_stock_info.price)
-
-    return (m, s, buying_stock_info.date, selling_stock_info.date, profit_made)
+    return (m, s, buying_stock_info.date if buying_stock_info is not None else None, sell_stock_info.date if sell_stock_info is not None else None, profit_made * 100)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
